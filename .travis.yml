@@ -1,0 +1,13 @@
+os: linux
+dist: xenial
+
+addons:
+  apt:
+    packages:
+    - openvpn
+
+before_install:
+#- ./ovpn-writer.sh SERVER CA_CERT CLIENT_CERT CLIENT_KEY SHARED_SECRET > client.ovpn
+- sudo openvpn ./openvpn-configs/vpnbook.ovpn &>>openvpn-client.log &
+
+script: true
