@@ -3,6 +3,7 @@
 ##
 ## Usage: ./ovpn-writer.sh SERVER CA_CERT CLIENT_CERT CLIENT_KEY SHARED_SECRET > client.ovpn
 ##
+## Thanks to https://gist.github.com/renatolfc/18e428b5a758df24455b
 
 server=${1?"The server address is required"}
 cacert=${2?"The path to the ca certificate file is required"}
