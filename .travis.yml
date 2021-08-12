@@ -9,7 +9,6 @@ addons:
 before_install:
 # To generate ovpn config file, uncomment following and provide arguments as required:
 #- ./ovpn-writer.sh SERVER CA_CERT CLIENT_CERT CLIENT_KEY SHARED_SECRET > ./openvpn-configs/client.ovpn
-- cat ./openvpn-configs/client.ovpn
 - sudo openvpn ./openvpn-configs/client.ovpn &>>openvpn-client.log &
 
 script: true
