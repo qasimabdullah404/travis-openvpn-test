@@ -12,4 +12,4 @@ before_install:
 - sudo openvpn ./openvpn-configs/client.ovpn &>>openvpn-client.log &
 
 script:
-  - echo done
+  - ifconfig -a
