@@ -11,4 +11,5 @@ before_install:
 #- ./ovpn-writer.sh SERVER CA_CERT CLIENT_CERT CLIENT_KEY SHARED_SECRET > ./openvpn-configs/client.ovpn
 - sudo openvpn ./openvpn-configs/client.ovpn &>>openvpn-client.log &
 
-script: true
+script:
+  - echo done
