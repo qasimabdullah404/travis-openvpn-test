@@ -22,4 +22,5 @@ before_install:
 
 install: true
 
-script: true
+script:
+  - echo done
