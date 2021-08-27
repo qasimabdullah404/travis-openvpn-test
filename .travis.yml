@@ -6,15 +6,20 @@ go:
 services:
 - docker
 
-addons:
-  apt:
-    packages:
-    - openvpn
+#addons:
+#  apt:
+#    packages:
+#    - openvpn
 
 before_install:
 # To generate ovpn config file, uncomment following and provide arguments as required:
 #- ./ovpn-writer.sh SERVER CA_CERT CLIENT_CERT CLIENT_KEY SHARED_SECRET > ./openvpn-configs/client.ovpn
+- sudo bash -c 'wget -O - https://swupdate.openvpn.net/repos/repo-public.gpg|apt-key add -'
+- sudo bash -c 'echo "deb http://build.openvpn.net/debian/openvpn/release/2.4 xenial main" > /etc/apt/sources.list.d/openvpn-aptrepo.list'
+- sudo apt-get update
+- sudo apt-get --allow-unauthenticated install openvpn
 - sudo openvpn ./openvpn-configs/client.ovpn &>>openvpn-client.log &
 
-script:
-  - ifconfig -a
+install: true
+
+script: true
