@@ -1,5 +1,10 @@
 os: linux
 dist: xenial
+language: go
+go:
+- 1.16.x
+services:
+- docker
 
 addons:
   apt:
